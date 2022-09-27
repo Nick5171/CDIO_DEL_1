@@ -21,7 +21,7 @@ public Die() {faceValue = 1;}
     }
 
 // Face value mutator
-
+//
     public void setFaceValue (int value) { faceValue = value; }
 
 // Face value accessor
