@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Game {
     public static void main(String[] args) {
 
@@ -10,6 +12,14 @@ public class Game {
         int turn = 1; //Turn counter
         boolean pair;
         int sum;
+
+        System.out.println("Welcome to the dice game!");
+        System.out.println("The rules are as following:");
+        System.out.println("Player 1 throws the two dice - the sum of the dice is then added to the score of player 1");
+        System.out.println("Player 2  throws the two dice - the sum of the dice is then added to the score of player 2");
+        System.out.println("Player 1 always starts the game");
+        System.out.println("The first player to reach a score of 40 wins the game, good luck!");
+
 
         while (a == 0){
             // Player 1's turn
