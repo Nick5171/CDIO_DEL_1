@@ -101,6 +101,7 @@ public class Test {
         System.out.println(sum10);
         System.out.println(sum11);
         System.out.println(sum12);
+
     }
     public static boolean getPair(int die1, int die2) {
 
