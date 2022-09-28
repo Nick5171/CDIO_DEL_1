@@ -21,6 +21,8 @@ public class Test {
         int sum11 =0;
         int sum12 =0;
 
+        int ispair = 0;
+        int notpair = 0;
 
 
 
@@ -36,6 +38,7 @@ public class Test {
                 points_P1 = sum + points_P1;
                 if (points_P1 >= 40)
                     a=1;
+
                 //Player 2's turn
                 die1.roll();
                 die2.roll();
@@ -44,13 +47,15 @@ public class Test {
                 points_P2 = sum + points_P2;
                 turn++;
 
-                if (points_P1 >= 40 || points_P2 >= 40) // Stops while loop is one player has 40 or more points
+                if (points_P2 >= 40) // Stops while loop if one player has 40 or more points
                     a = 1;
 
+                if (pair) // Counts if dice thrown is a pair or not
+                    ispair++;
+                else
+                    notpair++;
 
-
-
-                switch (sum){
+                switch (sum){ // Counts amount of times a given sum is thrown
                     case 2:
                         sum2++;
                         break;
@@ -88,19 +93,24 @@ public class Test {
                 }
 
             }
-        a--;
+        a--; // Resets while loop condition "a" to 0 for every for loop iteration
         }
-        System.out.println(sum2);
-        System.out.println(sum3);
-        System.out.println(sum4);
-        System.out.println(sum5);
-        System.out.println(sum6);
-        System.out.println(sum7);
-        System.out.println(sum8);
-        System.out.println(sum9);
-        System.out.println(sum10);
-        System.out.println(sum11);
-        System.out.println(sum12);
+        System.out.println("Over the course of 1000 games played:");
+        System.out.println("The sum of 2 is thrown " + sum2 + " times");
+        System.out.println("The sum of 3 is thrown " + sum3 + " times");
+        System.out.println("The sum of 4 is thrown " + sum4 + " times");
+        System.out.println("The sum of 5 is thrown " + sum5 + " times");
+        System.out.println("The sum of 6 is thrown " + sum6 + " times");
+        System.out.println("The sum of 7 is thrown " + sum7 + " times");
+        System.out.println("The sum of 8 is thrown " + sum8 + " times");
+        System.out.println("The sum of 9 is thrown " + sum9 + " times");
+        System.out.println("The sum of 10 is thrown " + sum10 + " times");
+        System.out.println("The sum of 11 is thrown " + sum11 + " times");
+        System.out.println("The sum of 12 is thrown " + sum12 + " times");
+        System.out.println();
+        System.out.println("Pairs have been thrown " + ispair + " times");
+
+
 
     }
     public static boolean getPair(int die1, int die2) {

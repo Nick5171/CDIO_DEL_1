@@ -36,6 +36,9 @@ public class Game {
             System.out.println();
             if (points_P1 >= 40)
                 a=1;
+            if (points_P1 >= 40) // Stops while loop if player 1 reaches 40 or more points
+                break;
+
             //Player 2's turn
             System.out.println("Player 2 rolls the Dice");
             die1.roll();
@@ -50,7 +53,7 @@ public class Game {
             System.out.println("--------------------------------------------------------------------------------");
             turn++;
 
-            if (points_P1 >= 40 || points_P2 >= 40) // Stops while loop is one player has 40 or more points
+            if (points_P2 >= 40) // Stops while loop if player 2 has 40 or more points
                 a = 1;
         }
         if (points_P1 > points_P2) // Prints what player won
