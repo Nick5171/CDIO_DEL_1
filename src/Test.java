@@ -99,10 +99,6 @@ public class Test {
         System.out.println("The sum of 12 is thrown " + sum12 + " times which makes up " + df.format((sum12/Throws)*100) + "% of the total throws made");
         System.out.println();
         System.out.println("Pairs have been thrown " + isPair + " times which makes up " + df.format((isPair/Throws)*100) + "% of the total throws made");
-
-
-
-
     }
     public static boolean getPair(int die1, int die2) {
 
