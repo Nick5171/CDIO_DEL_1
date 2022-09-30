@@ -1,11 +1,9 @@
-import java.sql.SQLOutput;
+package Die.Game;
+
+import java.util.Scanner;
 
 public class Game {
     public static void main(String[] args) {
-
-        Die die1, die2;
-        die1 = new Die();
-        die2 = new Die();
         int points_P1 = 0; // Points for player 1
         int points_P2 = 0; // Points for player 2
         int a = 0;
@@ -13,18 +11,32 @@ public class Game {
         boolean pair;
         int sum;
 
+        Die die1, die2; // The dice are created
+        die1 = new Die();
+        die2 = new Die();
+
+        //Introduction and rule description
         System.out.println("Welcome to the dice game!");
         System.out.println("The rules are as following:");
         System.out.println("Player 1 throws the two dice - the sum of the dice is then added to the score of player 1");
         System.out.println("Player 2  throws the two dice - the sum of the dice is then added to the score of player 2");
         System.out.println("Player 1 always starts the game");
-        System.out.println("The first player to reach a score of 40 or above wins the game, good luck!");
+        System.out.println("The first player to reach a score of 40 or above wins the game, good luck! \n");
 
+
+        System.out.println("Enter the name of player 1");
+        Scanner scanner = new Scanner(System.in);
+        String playerName_P1 = scanner.next();
+
+        System.out.println("Enter the name of player 2");
+        String playerName_P2 = scanner.next();
 
         while (a == 0){
             // Player 1's turn
             System.out.println("Turn " + turn + ":");
-            System.out.println("Player 1 rolls the Dice");
+            System.out.println("Enter anything to throw " + playerName_P1 + "'s dice");
+            scanner.next();
+            System.out.println(playerName_P1 + " rolls the Dice");
             die1.roll();
             die2.roll();
             pair= getPair(die1.getFaceValue(), die2.getFaceValue());
@@ -40,7 +52,9 @@ public class Game {
                 break;
 
             //Player 2's turn
-            System.out.println("Player 2 rolls the Dice");
+            System.out.println("Enter anything to throw " + playerName_P2 + "'s dice");
+            scanner.next();
+            System.out.println(playerName_P2 + " rolls the Dice");
             die1.roll();
             die2.roll();
             pair= getPair(die1.getFaceValue(), die2.getFaceValue());
@@ -71,4 +85,3 @@ public class Game {
         return die1 + die2;
     }
 }
-

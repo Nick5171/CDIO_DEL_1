@@ -1,3 +1,5 @@
+package Die.Game;
+
 public class Die
 {
 
@@ -5,7 +7,7 @@ public class Die
 
 private final int MAX = 6;
 
-    // Sets initial face value
+// Sets initial face value
 
 private int faceValue; // Value of die showing
 
